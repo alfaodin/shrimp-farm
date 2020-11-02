@@ -1,0 +1,40 @@
+<div class="sign-in-container">
+	<div class="sign-in-internal-content">
+		<img class="logo-image" src="./assets/shrimp_farm.png" alt="Shrim Farms logo image">
+		<form class="sign-in-form" [formGroup]='loginForm'>
+
+			<!-- EMAIL -->
+			<mat-form-field appearance="outline">
+				<mat-label>Correo Electrónico</mat-label>
+				<input matInput type="email" formControlName="email" placeholder="Correo Electrónico">
+				<mat-error *ngIf="loginForm.controls.email.errors?.pattern && !loginForm.controls.email.errors?.required">
+					Ingrese un correo electrónico &nbsp;<strong>válido</strong>.
+				</mat-error>
+				<mat-error *ngIf="loginForm.controls.email.errors?.required">
+					Correo electrónico es &nbsp;<strong>requerido</strong>
+				</mat-error>
+			</mat-form-field>
+
+			<!-- PASSWORD -->
+			<mat-form-field class="last-form-field" appearance="outline">
+				<mat-label>Contraseña</mat-label>
+				<input matInput type="password" style="font-size: 1.2rem;" formControlName="password" placeholder="Contraseña">
+				<mat-error
+					*ngIf="loginForm.controls.password.errors?.minlength && !loginForm.controls.password.errors?.required">
+					Contraseña debe tener como &nbsp;<strong>mínimo 5</strong>&nbsp; caracteres.
+				</mat-error>
+				<mat-error *ngIf="loginForm.controls.password.errors?.required">
+					Contraseña es &nbsp;<strong>requerida</strong>
+				</mat-error>
+			</mat-form-field>
+
+			<mat-error *ngIf="errorMessage">
+				<mat-icon>error</mat-icon>&nbsp;{{errorMessage}}
+			</mat-error>
+
+			<button (click)="login()" type="submit" mat-raised-button color="primary" class="blue-button">
+				INGRESAR
+			</button>
+		</form>
+	</div>
+</div>
