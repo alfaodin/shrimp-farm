@@ -1,6 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+
 import { AuthService } from '../../core/auth/auth.service';
 
 @Component({
@@ -27,7 +28,7 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  login() {
+  login(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.authService.loginEmailPassword(email, password)

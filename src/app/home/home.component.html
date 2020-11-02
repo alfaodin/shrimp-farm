@@ -1,1 +1,9 @@
-<p>home works!</p>
+<app-header class="header"></app-header>
+
+<div class="content-container">
+	<div class="internal-separation" [@triggerName]="prepareRoute(outlet)">
+		<router-outlet #outlet="outlet"></router-outlet>
+	</div>
+</div>
+
+<app-footer class="footer"></app-footer>

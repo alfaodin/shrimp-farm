@@ -1,0 +1,28 @@
+:host {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.content-container {
+	margin: 3rem;
+	flex: 1;
+	background: var(--background);
+	border-radius: var(--border-radius);
+	border: 1px solid var(--border-grey);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+
+	.internal-separation {
+		padding: 2rem 0;
+		flex: 1;
+		width: 80%;
+		display: flex;
+		overflow: hidden;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}

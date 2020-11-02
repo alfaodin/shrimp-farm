@@ -1,8 +1,7 @@
-
 .sign-in-container {
-  border-radius: 10px;
-  border: 1px solid #ebebeb;
   background: var(--background);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-grey);
 }
 
 .sign-in-internal-content {
@@ -34,5 +33,5 @@ mat-error {
 }
 
 mat-form-field.last-form-field {
-  margin-bottom: 2rem !important;
+  margin-bottom: 2rem;
 }
