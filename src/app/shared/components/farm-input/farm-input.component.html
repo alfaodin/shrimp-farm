@@ -1,0 +1,33 @@
+<form class="farm-input" [formGroup]="farmForm">
+	<mat-form-field appearance="outline">
+		<mat-label>Name</mat-label>
+		<input matInput type="text" formControlName="name" />
+		<mat-error *ngIf="farmForm.controls.name.errors?.required">
+			Name is &nbsp;<strong>required</strong>
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Direction</mat-label>
+		<input matInput type="text" formControlName="direction" />
+		<mat-error *ngIf="farmForm.controls.direction.errors?.required">
+			Direction is &nbsp;<strong>required</strong>
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Available Space (in hectares)</mat-label>
+		<input matInput type="number" formControlName="availableExtension" />
+		<mat-error *ngIf="farmForm.controls.availableExtension.errors?.required">
+			Farm extention is &nbsp;<strong>required</strong>
+		</mat-error>
+	</mat-form-field>
+
+	<h5>Manager</h5>
+
+	<app-manager-input formControlName="manager"></app-manager-input>
+
+	<button type="submit" mat-raised-button color="primary" [disabled]="farmForm.invalid" (click)="onSaveNewFarm()">
+		Guardar
+	</button>
+</form>

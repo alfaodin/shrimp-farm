@@ -1,0 +1,26 @@
+<ng-container class="farm-input" [formGroup]="managerForm">
+
+	<mat-form-field appearance="outline">
+		<mat-label>Manager Name</mat-label>
+		<input matInput type="text" formControlName="name" />
+		<mat-error *ngIf="managerForm.controls.name.errors?.required">
+			Name is &nbsp;<strong>required</strong>
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Manager Email</mat-label>
+		<input matInput type="email" formControlName="email" />
+		<mat-error *ngIf="managerForm.controls.email.errors?.required">
+			Email is &nbsp;<strong>required</strong>
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field appearance="outline">
+		<mat-label>Manager Phone (in hectares)</mat-label>
+		<input matInput type="tel" formControlName="phone" />
+		<mat-error *ngIf="managerForm.controls.phone.errors?.required">
+			Phone is &nbsp;<strong>required</strong>
+		</mat-error>
+	</mat-form-field>
+</ng-container>
