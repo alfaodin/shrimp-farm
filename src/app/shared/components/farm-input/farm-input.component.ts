@@ -29,8 +29,8 @@ export class FarmImputComponent implements OnInit {
 
   onSaveNewFarm(): void {
     if (this.farmForm.valid) {
-      console.log(this.farmForm.value);
       this.saveNewFarm.emit(this.farmForm.value);
+      this.farmForm.reset();
     }
   }
 

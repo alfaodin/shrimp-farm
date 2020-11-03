@@ -1,5 +1,5 @@
 <div class="farm-info-container" *ngIf="farmList$ | async as farms; else noFarms">
-	<div class="farm-info-item" *ngFor="let item of farms"></div>
+	<app-farm-item class="farm-info-item" [farm]="item" *ngFor="let item of farms"></app-farm-item>
 </div>
 <ng-template #noFarms>
 	Create your first Farm

@@ -40,11 +40,9 @@ export class FarmBlocService {
     }
   }
 
-
   public get farmList(): Observable<FarmModel[]> {
     return this.farmList$.asObservable();
   }
-
 
   init(): void {
     this.farmSubscription = this.db.collection('farms').valueChanges()
@@ -58,6 +56,7 @@ export class FarmBlocService {
     const currentUser = this.authService.getCurrentUser();
     const newFarm = {
       ...farm,
+      inUseExtension: 0,
       creationTime: Date.now(),
       createdBy: currentUser.uid,
 

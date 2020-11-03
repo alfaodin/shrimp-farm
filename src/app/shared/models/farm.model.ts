@@ -4,7 +4,10 @@ export interface FarmModel {
   name: string;
   direction: string;
   inUseExtension: number;
-  reponsable: WorkerModel;
+  manager: WorkerModel;
   availableExtension: number;
+
+  // Transient properties
+  percentageInUseExtension: number;
 
 }

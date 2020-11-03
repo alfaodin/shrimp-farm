@@ -43,6 +43,10 @@ export class ManagerInputComponent implements OnInit, ControlValueAccessor {
   writeValue(val: any): void {
     if (val) {
       this.managerForm.setValue(val, { emitEvent: false });
+    } else {
+      if (this.managerForm.valid) {
+        this.managerForm.reset();
+      }
     }
   }
 
